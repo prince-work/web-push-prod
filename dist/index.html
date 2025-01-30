@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/web-push/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      #app {
+        display: flex;
+        height: 100vh;
+        width: 100vw;
+        justify-content: center;
+        align-items: center;
+      }
+      .btn {
+        padding: 2rem 5rem;
+        border: none;
+        background-color: black;
+        color: white;
+        border-radius: 5px;
+        display: block;
+        font-size: 1.5rem;
+      }
+    </style>
+    <script type="module" crossorigin src="/web-push/assets/index-B9cveWwc.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <button class="btn" id="allow_notification">Allow Notification</button>
+    </div>
+
+    <script type="text/javascript">
+      var s = document.createElement("script");
+      s.src = "https://staging.chat360.io/push/notification/script.js";
+      s.async = true;
+      s.onload = function () {
+        window.Chat360Notification.initialize({
+          channelId: "4a23d8be-58a5-4c31-9a3b-41f338aa994f",
+        });
+        window.chat360Push("startTrack");
+      }
+      document.head.appendChild(s);
+    </script>
+  </body>
+</html>
